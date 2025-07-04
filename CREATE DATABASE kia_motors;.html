@@ -1,0 +1,14 @@
+CREATE DATABASE kia_motors;
+
+USE kia_motors;
+
+CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    model VARCHAR(255) NOT NULL,
+    rating INT NOT NULL,
+    service VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    review TEXT NOT NULL,
+    date DATETIME NOT NULL
+);

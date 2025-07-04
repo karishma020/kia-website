@@ -1,0 +1,23 @@
+<h2>Book a Test Drive</h2>
+<form action="book_testdrive.php" method="POST">
+  <label>Name:</label><br>
+  <input type="text" name="name" required><br>
+
+  <label>Email:</label><br>
+  <input type="email" name="email" required><br>
+
+  <label>Phone:</label><br>
+  <input type="tel" name="phone" required><br>
+
+  <label>Preferred Car Model:</label><br>
+  <select name="model">
+    <option value="Kia Seltos">Kia Seltos</option>
+    <option value="Kia Carens">Kia Carens</option>
+    <option value="Kia Sonet">Kia Sonet</option>
+  </select><br>
+
+  <label>Preferred Date:</label><br>
+  <input type="date" name="date" required><br><br>
+
+  <button type="submit">Book Now</button>
+</form>

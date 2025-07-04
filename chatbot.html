@@ -1,0 +1,25 @@
+<div id="chatbot">
+  <div id="chatOutput"></div>
+  <input type="text" id="userInput" placeholder="Ask about Kia cars..." />
+  <button onclick="chat()">Send</button>
+</div>
+
+<script>
+  function chat() {
+    const input = document.getElementById("userInput").value.toLowerCase();
+    let output = "";
+
+    if (input.includes("seltos")) {
+      output = "Kia Seltos is a compact SUV with great features and sporty looks.";
+    } else if (input.includes("sonet")) {
+      output = "Kia Sonet is ideal for city rides with compact dimensions and top features.";
+    } else if (input.includes("carens")) {
+      output = "Kia Carens is a family MUV with spacious interiors and comfort.";
+    } else {
+      output = "Sorry, I can only answer about Kia Seltos, Sonet, and Carens.";
+    }
+
+    document.getElementById("chatOutput").innerHTML += `<p><b>You:</b> ${input}<br><b>Bot:</b> ${output}</p>`;
+    document.getElementById("userInput").value = "";
+  }
+</script>

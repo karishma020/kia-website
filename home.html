@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kia Motors</title>
+    <link rel="stylesheet" href="homestyles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="submit_review.html">Reviews</a></li>
+                <li><a href="https://www.kia.com/in/utility/contact-us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="image/kia.png" alt="logo">
+        <h1>Welcome to Kia Motors</h1>
+        <p>Your trusted car brand.</p>
+    </section>
+
+    <section id="cars">
+        <h2>Our Popular Cars</h2>
+        <div class="car-ads">
+            <div class="car-ad" data-model="Kia Seltos">
+                <img src="image/car1.webp" alt="Kia Car 1">
+                <h1>Kia Seltos</h1>
+                <p>The 2023 Kia Seltos is a better-rounded package than the pre-facelift model...</p>
+                <button class="compareBtn">Compare</button>
+            </div>
+            <div class="car-ad" data-model="Kia Carens">
+                <img src="image/car2.webp" alt="Kia Car 2">
+                <h1>Kia Carens</h1>
+                <p>The three-row Carens is commendable for its good comfort and convenience features...</p>
+                <button class="compareBtn">Compare</button>
+            </div>
+            <div class="car-ad" data-model="Kia Sonet">
+                <img src="image/car3.webp" alt="Kia Car 3">
+                <h1>Kia Sonet</h1>
+                <p>The Sonet is a stylish compact SUV offering a feature-rich and premium interior...</p>
+                <button class="compareBtn">Compare</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="compareSection">
+        <h2>Compare Cars</h2>
+        <div id="compareList"></div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-blocks">
+            <div class="service-block">
+                <h3>Routine Maintenance</h3>
+                <p>Regular maintenance services to keep your Kia in top condition...</p>
+                <button onclick="location.href='maintenance.html'">Learn More</button>
+            </div>
+            <div class="service-block">
+                <h3>Genuine Parts and Accessories</h3>
+                <p>Offering a wide range of genuine Kia parts and accessories...</p>
+                <button onclick="location.href='parts.html'">Learn More</button>
+            </div>
+            <div class="service-block">
+                <h3>Vehicle Health Check</h3>
+                <p>Comprehensive vehicle health checks to ensure your car is running smoothly...</p>
+                <button onclick="location.href='healthcheck.html'">Learn More</button>
+            </div>
+            <br/><br/>
+        </div>
+        <div>
+            <a href="display_review.php">check reviews</a>
+        </div>
+        <div class="special-block">
+            <h3>Special Service</h3>
+            <p>Details about the special service.</p>
+            <button onclick="location.href='reviews.html'">Go to Reviews</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kia Motors. All rights reserved.</p>
+    </footer>
+
+    <!-- Control Buttons -->
+    <div style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;">
+        <button id="darkModeToggle">🌙 Dark Mode</button>
+        <button id="voiceSearchBtn">🎤 Voice Search</button>
+        <input type="text" id="voiceSearchInput" placeholder="Search by voice..." />
+    </div>
+
+    <!-- Voice Search Result Display -->
+    <div id="searchResults" style="margin: 20px;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
