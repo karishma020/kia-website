@@ -4,6 +4,7 @@ This is a responsive clone of the Kia Car website, developed as a self-learning 
 Features: 
 Dark Mode Toggle – Switch between light and dark themes.
 Voice Search – Search car models using your voice (Web Speech API).
+Car Comparison Tool – Add/remove cars for side-by-side comparison.
 Model Listing & Filtering – Display and filter car models from the database.
 Responsive Design – Optimized for both desktop and mobile views.
 MySQL Integration – Store and manage car model data using PHP and MySQL.
