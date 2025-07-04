@@ -9,16 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // COMPARE FEATURE
 const compareList = new Set();
+
 document.querySelectorAll('.compareBtn').forEach(button => {
     button.addEventListener('click', () => {
-        const model = button.parentElement.getAttribute('data-model');
+        const card = button.closest('.car-ad');
+        const model = card.getAttribute('data-model');
+
         if (compareList.has(model)) {
             compareList.delete(model);
             button.textContent = 'Compare';
         } else {
+            if (compareList.size >= 2) {
+                alert("You can only compare 2 cars at a time.");
+                return;
+            }
             compareList.add(model);
             button.textContent = 'Remove from Compare';
         }
+
         updateCompareList();
     });
 });
@@ -26,11 +34,37 @@ document.querySelectorAll('.compareBtn').forEach(button => {
 function updateCompareList() {
     const container = document.getElementById('compareList');
     container.innerHTML = '';
+
+    if (compareList.size < 1) {
+        container.innerHTML = '<p>Please select 2 cars to compare.</p>';
+        return;
+    }
+
+    const carAds = document.querySelectorAll('.car-ad');
+    const selectedCards = [];
+
     compareList.forEach(model => {
-        const div = document.createElement('div');
-        div.textContent = model;
-        container.appendChild(div);
+        carAds.forEach(card => {
+            if (card.getAttribute('data-model') === model) {
+                const clone = card.cloneNode(true);
+                const btn = clone.querySelector('.compareBtn');
+                if (btn) btn.remove(); // Remove compare button in comparison view
+                selectedCards.push(clone);
+            }
+        });
     });
+
+    const compareWrapper = document.createElement('div');
+    compareWrapper.style.display = 'flex';
+    compareWrapper.style.gap = '20px';
+
+    selectedCards.forEach(card => {
+        card.style.width = '45%';
+        card.style.border = '1px solid #ccc';
+        compareWrapper.appendChild(card);
+    });
+
+    container.appendChild(compareWrapper);
 }
 
 // VOICE SEARCH
