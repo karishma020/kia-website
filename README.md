@@ -14,3 +14,6 @@ Frontend: HTML, CSS, JS
 Backend: PHP	
 Database: MySQL	
 Other Tools: XAMPP, Web Speech API
+
+
+![Screenshot (38)](https://github.com/user-attachments/assets/0cde2a85-63a0-43ed-bf2d-9345758a56d5)
